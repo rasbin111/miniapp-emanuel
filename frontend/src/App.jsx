@@ -9,13 +9,7 @@ import Home from "./pages/Home";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   { path: "/login", Component: LoginPage },
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      { path: "", Component: Home },
-    ],
-  },
+  { path: "/", Component: Home },
   { path: "*", Component: PageNotFound },
 ]);
 

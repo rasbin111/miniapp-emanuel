@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./styles.css";
 import { BiShow } from "react-icons/bi";
-import { RxHamburgerMenu } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
-
+import { loginPost } from "../../api/main";
+import { useNavigate } from "react-router";
 const LoginPage = () => {
+    const navigate = useNavigate()
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [showPassword, setShowPassword] = useState(false);
@@ -13,13 +15,18 @@ const LoginPage = () => {
     const [passwordEmptError, setPasswordEmptError] = useState(false)
     const [emailEmptError, setEmailEmtError] = useState(false)
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault()
 
-        if (email.length === 0) setEmailEmtError(true)
-        if (password.length === 0) setPasswordEmptError(true)
-
+        const response = await loginPost("/users/login/", { "email": email, "password": password })
+        console.log(response)
+        if (response.status === 200) {
+            localStorage.setItem("access", response.data.access)
+            localStorage.setItem("refresh", response.data.refresh)
+            navigate('/', { replace: true })
+        }
     }
+
     return (
         <div className="login-container">
             <img src="bg.jpg" alt="bg" className="background-img" />
