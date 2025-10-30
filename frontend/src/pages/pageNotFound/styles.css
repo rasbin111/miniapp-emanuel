@@ -1,0 +1,20 @@
+.not-found-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.not-found-main h1 {
+    color: black;
+    margin-bottom: 0.5em;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.not-found-main a {
+    color: #1657a4;
+    text-decoration: underline;
+}
