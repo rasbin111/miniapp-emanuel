@@ -50,6 +50,9 @@ const authenticated = (api) => {
     return api
 }
 
+export const getContentData = (url) =>
+    api.get(url)
+
 export const getData = (url) =>
     authenticated(api).get(url)
 

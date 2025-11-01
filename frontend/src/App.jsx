@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import PageNotFound from "./pages/pageNotFound";
 import Home from "./pages/Home";
 import TermsPage from "./pages/terms";
+import { LanguageContextProvider } from "./context/languageContext";
 
 
 const queryClient = new QueryClient();
@@ -18,7 +19,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <LanguageContextProvider>
+        <RouterProvider router={router} />
+      </LanguageContextProvider>
     </QueryClientProvider>
   );
 }
