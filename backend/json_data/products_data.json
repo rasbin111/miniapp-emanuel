@@ -1,0 +1,302 @@
+[
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Basmati Rice",
+      "article_num": "NP001",
+      "in_price": 950,
+      "price": 1200,
+      "unit": "kg",
+      "in_stock": 200,
+      "description": "Premium Nepali basmati rice from Terai region with rich aroma and long grains."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Gundruk",
+      "article_num": "NP002",
+      "in_price": 350,
+      "price": 500,
+      "unit": "kg",
+      "in_stock": 80,
+      "description": "Traditional fermented leafy vegetable popular in Nepali cuisine."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Dalle Khursani Pickle",
+      "article_num": "NP003",
+      "in_price": 250,
+      "price": 350,
+      "unit": "bottle",
+      "in_stock": 60,
+      "description": "Spicy pickle made from fiery Dalle Khursani chili from Eastern Nepal."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Himalayan Honey",
+      "article_num": "NP004",
+      "in_price": 600,
+      "price": 850,
+      "unit": "500g",
+      "in_stock": 100,
+      "description": "Pure wild honey collected from the hills of Lamjung and Gorkha."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Yak Cheese",
+      "article_num": "NP005",
+      "in_price": 1200,
+      "price": 1500,
+      "unit": "kg",
+      "in_stock": 40,
+      "description": "Traditional yak cheese produced in high Himalayan regions like Mustang."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Dhaka Topi",
+      "article_num": "NP006",
+      "in_price": 250,
+      "price": 400,
+      "unit": "piece",
+      "in_stock": 75,
+      "description": "Handwoven Nepali Dhaka topi made with traditional patterns."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Pashmina Shawl",
+      "article_num": "NP007",
+      "in_price": 2500,
+      "price": 3500,
+      "unit": "piece",
+      "in_stock": 30,
+      "description": "Soft and elegant Pashmina shawl made from Himalayan goat wool."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Nepali Tea (Ilam)",
+      "article_num": "NP008",
+      "in_price": 450,
+      "price": 600,
+      "unit": "500g",
+      "in_stock": 120,
+      "description": "High-quality black tea from Ilam, known for its aroma and taste."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Handmade Lokta Paper Notebook",
+      "article_num": "NP009",
+      "in_price": 200,
+      "price": 350,
+      "unit": "piece",
+      "in_stock": 90,
+      "description": "Eco-friendly notebook made from traditional Nepali Lokta paper."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Thangka Painting",
+      "article_num": "NP010",
+      "in_price": 4000,
+      "price": 6000,
+      "unit": "piece",
+      "in_stock": 10,
+      "description": "Traditional Buddhist Thangka painting handmade in Patan."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Nepali Organic Coffee",
+      "article_num": "NP011",
+      "in_price": 800,
+      "price": 1100,
+      "unit": "kg",
+      "in_stock": 50,
+      "description": "Organic coffee beans from Nuwakot with rich and smooth flavor."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Timbur Spice",
+      "article_num": "NP012",
+      "in_price": 300,
+      "price": 450,
+      "unit": "100g",
+      "in_stock": 60,
+      "description": "Unique Nepali spice with a citrus aroma used in traditional dishes."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Himalayan Pink Salt",
+      "article_num": "NP013",
+      "in_price": 150,
+      "price": 250,
+      "unit": "500g",
+      "in_stock": 150,
+      "description": "Natural pink rock salt mined from Himalayan foothills."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Tibetan Incense",
+      "article_num": "NP014",
+      "in_price": 200,
+      "price": 350,
+      "unit": "box",
+      "in_stock": 70,
+      "description": "Hand-rolled incense sticks made with Himalayan herbs and flowers."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Rice Beads Mala (Pote)",
+      "article_num": "NP015",
+      "in_price": 80,
+      "price": 150,
+      "unit": "piece",
+      "in_stock": 200,
+      "description": "Colorful glass bead necklaces traditionally worn by Nepali women."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Nepali Handmade Soap",
+      "article_num": "NP016",
+      "in_price": 180,
+      "price": 300,
+      "unit": "piece",
+      "in_stock": 100,
+      "description": "Natural herbal soap crafted with essential oils and Himalayan herbs."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Buckwheat Flour (Fapar)",
+      "article_num": "NP017",
+      "in_price": 180,
+      "price": 250,
+      "unit": "kg",
+      "in_stock": 90,
+      "description": "Healthy gluten-free flour made from high-altitude buckwheat."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Chhurpi (Hard Cheese Snack)",
+      "article_num": "NP018",
+      "in_price": 300,
+      "price": 450,
+      "unit": "pack",
+      "in_stock": 60,
+      "description": "Traditional Himalayan hard cheese snack made from yak milk."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Copper Water Pot (Lota)",
+      "article_num": "NP019",
+      "in_price": 900,
+      "price": 1200,
+      "unit": "piece",
+      "in_stock": 40,
+      "description": "Handcrafted copper lota used for traditional and religious purposes."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Juju Dhau (Bhaktapur Curd)",
+      "article_num": "NP020",
+      "in_price": 100,
+      "price": 150,
+      "unit": "500ml",
+      "in_stock": 50,
+      "description": "Famous sweet curd from Bhaktapur, rich in taste and tradition."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Nepali Khukuri",
+      "article_num": "NP021",
+      "in_price": 1500,
+      "price": 2000,
+      "unit": "piece",
+      "in_stock": 25,
+      "description": "Traditional curved knife symbolizing bravery of the Gurkhas."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Amla Powder",
+      "article_num": "NP022",
+      "in_price": 250,
+      "price": 400,
+      "unit": "100g",
+      "in_stock": 80,
+      "description": "Organic dried Amla powder used for hair care and health supplements."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Organic Lentils (Masuro Dal)",
+      "article_num": "NP023",
+      "in_price": 180,
+      "price": 250,
+      "unit": "kg",
+      "in_stock": 120,
+      "description": "Locally grown red lentils, a staple in Nepali dal-bhat meals."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Mustard Oil",
+      "article_num": "NP024",
+      "in_price": 250,
+      "price": 320,
+      "unit": "liter",
+      "in_stock": 70,
+      "description": "Cold-pressed mustard oil made from locally grown mustard seeds."
+    }
+  },
+  {
+    "model": "store.product",
+    "fields": {
+      "name": "Nepali Handmade Carpet",
+      "article_num": "NP025",
+      "in_price": 7000,
+      "price": 9500,
+      "unit": "piece",
+      "in_stock": 15,
+      "description": "Handwoven woolen carpet made by artisans in Kathmandu Valley."
+    }
+  }
+]

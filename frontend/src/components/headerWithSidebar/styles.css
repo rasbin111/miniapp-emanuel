@@ -3,6 +3,8 @@
     align-items: center;
     padding: 1rem 4rem;
     background-color: #1657a4;
+    /* position: sticky; */
+    width: 100%;
 }
 
 
@@ -86,6 +88,7 @@
 
 .sidebar-main {
     display: flex;
+    height: 89vh;
 }
 
 .sidebar-menu-box {
@@ -135,6 +138,7 @@
     background-color: whitesmoke;
     flex: 1;
     min-height: 89vh;
+    overflow-y: scroll;
 }
 
 

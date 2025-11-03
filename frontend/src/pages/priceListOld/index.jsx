@@ -1,7 +1,6 @@
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { IoMdAdd, IoMdPrint } from "react-icons/io";
-import { PiDotsThreeBold } from "react-icons/pi";
 import { useQueryClient } from "@tanstack/react-query";
 
 import { MdSettingsSuggest } from "react-icons/md";
@@ -142,28 +141,30 @@ const PriceListPage = () => {
           </div>
         </div>
         <div className="price-list-body">
-          <div className="price-list-table">
-              <div className="price-list-table-header">
-                <div style={{ width: "1rem" }}> </div>
-                <div> Article No. </div>
-                <div> Product/Service </div>
-                <div> In Price </div>
-                <div> Price </div>
-                <div> Unit </div>
-                <div> In Stock </div>
-                <div> Description </div>
-                <div style={{ width: "1rem" }}> </div>
-              </div>
-            <div className="price-list-table-body">
+          <table className="price-list-table">
+            <thead>
+              <tr className="price-list-table-header">
+                <td style={{ width: "1rem" }}> </td>
+                <td> Article No. </td>
+                <td> Product/Service </td>
+                <td> In Price </td>
+                <td> Price </td>
+                <td> Unit </td>
+                <td> In Stock </td>
+                <td> Description </td>
+                <td style={{ width: "1rem" }}> </td>
+              </tr>
+            </thead>
+            <tbody className="price-list-table-body">
               {editableProducts.map((product) => {
                 return (
-                  <div className="pltb-row" key={product.id}>
+                  <tr className="pltb-row" key={product.id}>
                     {focusedProduct === product.id ? (
                       <FaArrowRight />
                     ) : (
                       <div style={{ width: "1rem" }}></div>
                     )}
-                    <div className="pltb-row-item">
+                    <td>
                       <input
                         type="text"
                         value={product.article_num}
@@ -178,8 +179,8 @@ const PriceListPage = () => {
                         onBlur={() => handleFocusOut()}
                         onFocus={() => setFocusedProduct(product.id)}
                       />
-                    </div>
-                    <div className="pltb-row-item">
+                    </td>
+                    <td>
                       <input
                         type="text"
                         value={product.name}
@@ -190,8 +191,8 @@ const PriceListPage = () => {
                         onBlur={() => handleFocusOut()}
                         onFocus={() => setFocusedProduct(product.id)}
                       />
-                    </div>
-                    <div className="pltb-row-item">
+                    </td>
+                    <td>
                       <input
                         type="text"
                         value={product.in_price}
@@ -207,8 +208,8 @@ const PriceListPage = () => {
                         onBlur={() => handleFocusOut()}
                         onFocus={() => setFocusedProduct(product.id)}
                       />
-                    </div>
-                    <div className="pltb-row-item">
+                    </td>
+                    <td>
                       <input
                         type="text"
                         value={product.price}
@@ -224,9 +225,9 @@ const PriceListPage = () => {
                         onBlur={() => handleFocusOut()}
                         onFocus={() => setFocusedProduct(product.id)}
                       />
-                    </div>
+                    </td>
 
-                    <div className="pltb-row-item">
+                    <td>
                       <input
                         type="text"
                         value={product.unit}
@@ -238,9 +239,9 @@ const PriceListPage = () => {
                         onBlur={() => handleFocusOut()}
                         onFocus={() => setFocusedProduct(product.id)}
                       />
-                    </div>
+                    </td>
 
-                    <div className="pltb-row-item">
+                    <td>
                       {" "}
                       <input
                         type="text"
@@ -256,9 +257,9 @@ const PriceListPage = () => {
                         onBlur={() => handleFocusOut()}
                         onFocus={() => setFocusedProduct(product.id)}
                       />{" "}
-                    </div>
+                    </td>
 
-                    <div className="pltb-row-item">
+                    <td>
                       {" "}
                       <input
                         type="text"
@@ -274,15 +275,16 @@ const PriceListPage = () => {
                         onBlur={() => handleFocusOut()}
                         onFocus={() => setFocusedProduct(product.id)}
                       />{" "}
-                    </div>
-                    <div style={{marginLeft: "1rem", cursor: "pointer"}}>
-                      <PiDotsThreeBold />
-                    </div>
-                  </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <div> ...</div>{" "}
+                    </td>
+                  </tr>
                 );
               })}
-            </div>
-          </div>
+            </tbody>
+          </table>
         </div>
         {showConfirmation && (
           <div className="confirmation-dialog">
