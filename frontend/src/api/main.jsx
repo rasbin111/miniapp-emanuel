@@ -45,7 +45,7 @@ api.interceptors.response.use(
 )
 
 const authenticated = (api) => {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem('access')
     api.defaults.headers.common.Authorization = token || ''
     return api
 }
@@ -57,7 +57,7 @@ export const getData = (url) =>
     authenticated(api).get(url)
 
 export const editData = (
-    data,
+    url, data
 ) => authenticated(api).put(url, data)
 
 

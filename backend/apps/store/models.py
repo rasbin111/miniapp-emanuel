@@ -25,3 +25,16 @@ class Terms(models.Model):
 
     class Meta:
         verbose_name_plural = "Terms"
+
+class Product(models.Model):
+    name = models.CharField(max_length=250)
+    article_num = models.CharField(max_length=50)
+    in_price = models.PositiveIntegerField(default=0)
+    price = models.PositiveIntegerField(default=0)
+    unit = models.CharField(max_length=50)
+    in_stock = models.PositiveIntegerField(default=0)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
+

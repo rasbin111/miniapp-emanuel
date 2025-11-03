@@ -43,7 +43,7 @@ const LoginPage = () => {
         const response = await loginPost("/users/login/", { "email": email, "password": password })
         console.log(response)
         if (response.status === 200) {
-            localStorage.setItem("access", response.data.access)
+            localStorage.setItem("access", "Bearer " + response.data.access)
             localStorage.setItem("refresh", response.data.refresh)
             navigate('/', { replace: true })
         }
