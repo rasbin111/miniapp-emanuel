@@ -2,9 +2,10 @@
     display: flex;
     align-items: center;
     padding: 1rem 4rem;
+    height: 70px;
     background-color: #1657a4;
-    /* position: sticky; */
     width: 100%;
+    box-sizing: border-box;
 }
 
 
@@ -23,13 +24,19 @@
 
 .user-box {
     display: flex;
-    gap: 1rem;
+    gap: 0.7rem;
 }
 
 .heading-left-section .user-info {
     display: flex;
     flex-direction: column;
     color: white;
+    font-size: 1rem;
+}
+
+.heading-left-section .user-info span:nth-of-type(2){
+    font-size: 0.9rem;
+    margin-top: -0.1rem;
 }
 
 .heading-right-section {
@@ -55,7 +62,7 @@
     margin-left: 2rem;
     cursor: pointer;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     position: relative;
 }
 
@@ -88,22 +95,23 @@
 
 .sidebar-main {
     display: flex;
-    height: 89vh;
+    height: calc(100vh - 70px);
 }
 
 .sidebar-menu-box {
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     gap: 2rem;
     padding: 1rem;
     width: fit-content;
     position: relative;
-    min-height: 89vh;
-    box-shadow: 3px 3px 3px rgb(238, 236, 236);
+    box-shadow: 3px 5px 10px 5px rgb(128, 192, 229);
+    min-height: calc(100vh - 70px);
 }
 
 .sidebar-menu-box h2 {
-    border-bottom: 1px solid green;
+    border-bottom: 2px solid rgb(128, 192, 229);
     text-align: center;
 }
 
@@ -127,6 +135,12 @@
     align-items: center;
 }
 
+.active-nav-item > div{
+    background-color: green;
+    border-radius: 50%;
+    padding: 0.3rem;
+}
+
 
 .sidebar-burger-menu {
     display: none;
@@ -134,10 +148,9 @@
 }
 
 .outlet {
-    padding: 1rem;
+    padding: 1rem 2rem;
     background-color: whitesmoke;
     flex: 1;
-    min-height: 89vh;
     overflow-y: scroll;
 }
 
@@ -150,6 +163,9 @@
 
     .sidebar-burger-menu {
         display: block;
+        color: rgb(128, 192, 229);
+        height: 20px;
+        width: 40px;
     }
 
     .sidebar-menu-box {

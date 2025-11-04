@@ -4,12 +4,13 @@ import { IoMdAdd, IoMdPrint } from "react-icons/io";
 import { PiDotsThreeBold } from "react-icons/pi";
 import { useQueryClient } from "@tanstack/react-query";
 
-import { MdSettingsSuggest } from "react-icons/md";
+import { MdDelete, MdEdit, MdSettingsSuggest } from "react-icons/md";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { getData, editData } from "../../api/main";
 
 import "./styles.css";
 import { FaArrowRight } from "react-icons/fa6";
+import { IoClose } from "react-icons/io5";
 const DISPLAY_NAMES = {
   article_num: "Article No.",
   name: "Product/Service",
@@ -27,6 +28,10 @@ const PriceListPage = () => {
   const [selectedChange, setSelectedChange] = useState({});
   const [focusedProduct, setFocusedProduct] = useState(false);
   const [isChanged, setIsChanged] = useState(false);
+  const [showOptionsMenu, setShowOptionsMenu] = useState({
+    show: false,
+    id: null,
+  });
 
   const { data: products, isLoading } = useQuery({
     queryKey: ["products"],
@@ -88,6 +93,7 @@ const PriceListPage = () => {
 
   const handleConfirmChange = (confirmationResponse) => {
     if (confirmationResponse === "no") {
+      setIsChanged(false)
       setEditableProducts((prev) => {
         return prev.map((p) => {
           if (p.id === selectedChange.idx) {
@@ -143,140 +149,182 @@ const PriceListPage = () => {
         </div>
         <div className="price-list-body">
           <div className="price-list-table">
-              <div className="price-list-table-header">
-                <div style={{ width: "1rem" }}> </div>
-                <div> Article No. </div>
-                <div> Product/Service </div>
-                <div> In Price </div>
-                <div> Price </div>
-                <div> Unit </div>
-                <div> In Stock </div>
-                <div> Description </div>
-                <div style={{ width: "1rem" }}> </div>
-              </div>
+            <div className="price-list-table-header">
+              <div style={{ width: "1rem" }}> </div>
+              <div className="mob-remove"> Article No. </div>
+              <div> Product/Service </div>
+              <div className="mob-remove"> In Price </div>
+              <div> Price </div>
+              <div className="mob-remove"> Unit </div>
+              <div className="tab-remove"> In Stock </div>
+              <div className="tab-remove"> Description </div>
+              <div style={{ width: "1rem" }}> </div>
+            </div>
+
             <div className="price-list-table-body">
               {editableProducts.map((product) => {
                 return (
-                  <div className="pltb-row" key={product.id}>
-                    {focusedProduct === product.id ? (
-                      <FaArrowRight />
-                    ) : (
-                      <div style={{ width: "1rem" }}></div>
-                    )}
-                    <div className="pltb-row-item">
-                      <input
-                        type="text"
-                        value={product.article_num}
-                        onChange={(e) => {
-                          setIsChanged(true);
-                          handleValueChange(
-                            product.id,
-                            "article_num",
-                            e.target.value
-                          );
-                        }}
-                        onBlur={() => handleFocusOut()}
-                        onFocus={() => setFocusedProduct(product.id)}
-                      />
-                    </div>
-                    <div className="pltb-row-item">
-                      <input
-                        type="text"
-                        value={product.name}
-                        onChange={(e) => {
-                          setIsChanged(true);
-                          handleValueChange(product.id, "name", e.target.value);
-                        }}
-                        onBlur={() => handleFocusOut()}
-                        onFocus={() => setFocusedProduct(product.id)}
-                      />
-                    </div>
-                    <div className="pltb-row-item">
-                      <input
-                        type="text"
-                        value={product.in_price}
-                        onChange={(e) => {
-                          setIsChanged(true);
+                  <div>
+                    <div className="pltb-row" key={product.id}>
+                      {focusedProduct === product.id ? (
+                        <FaArrowRight style={{color: "rgb(128, 192, 229)"}}/>
+                      ) : (
+                        <div style={{ width: "1rem" }}></div>
+                      )}
+                      <div className="pltb-row-item mob-remove">
+                        <input
+                          type="text"
+                          value={product.article_num}
+                          onChange={(e) => {
+                            setIsChanged(true);
+                            handleValueChange(
+                              product.id,
+                              "article_num",
+                              e.target.value
+                            );
+                          }}
+                          onBlur={() => handleFocusOut()}
+                          onFocus={() => setFocusedProduct(product.id)}
+                        />
+                      </div>
+                      <div className="pltb-row-item">
+                        <input
+                          type="text"
+                          value={product.name}
+                          onChange={(e) => {
+                            setIsChanged(true);
+                            handleValueChange(
+                              product.id,
+                              "name",
+                              e.target.value
+                            );
+                          }}
+                          onBlur={() => handleFocusOut()}
+                          onFocus={() => setFocusedProduct(product.id)}
+                        />
+                      </div>
+                      <div className="pltb-row-item mob-remove">
+                        <input
+                          type="text"
+                          value={product.in_price}
+                          onChange={(e) => {
+                            setIsChanged(true);
 
-                          handleValueChange(
-                            product.id,
-                            "in_price",
-                            e.target.value
-                          );
-                        }}
-                        onBlur={() => handleFocusOut()}
-                        onFocus={() => setFocusedProduct(product.id)}
-                      />
-                    </div>
-                    <div className="pltb-row-item">
-                      <input
-                        type="text"
-                        value={product.price}
-                        onChange={(e) => {
-                          setIsChanged(true);
+                            handleValueChange(
+                              product.id,
+                              "in_price",
+                              e.target.value
+                            );
+                          }}
+                          onBlur={() => handleFocusOut()}
+                          onFocus={() => setFocusedProduct(product.id)}
+                        />
+                      </div>
+                      <div className="pltb-row-item">
+                        <input
+                          type="text"
+                          value={product.price}
+                          onChange={(e) => {
+                            setIsChanged(true);
 
-                          handleValueChange(
-                            product.id,
-                            "price",
-                            e.target.value
-                          );
-                        }}
-                        onBlur={() => handleFocusOut()}
-                        onFocus={() => setFocusedProduct(product.id)}
-                      />
-                    </div>
+                            handleValueChange(
+                              product.id,
+                              "price",
+                              e.target.value
+                            );
+                          }}
+                          onBlur={() => handleFocusOut()}
+                          onFocus={() => setFocusedProduct(product.id)}
+                        />
+                      </div>
 
-                    <div className="pltb-row-item">
-                      <input
-                        type="text"
-                        value={product.unit}
-                        onChange={(e) => {
-                          setIsChanged(true);
+                      <div className="pltb-row-item mob-remove">
+                        <input
+                          type="text"
+                          value={product.unit}
+                          onChange={(e) => {
+                            setIsChanged(true);
 
-                          handleValueChange(product.id, "unit", e.target.value);
-                        }}
-                        onBlur={() => handleFocusOut()}
-                        onFocus={() => setFocusedProduct(product.id)}
-                      />
-                    </div>
+                            handleValueChange(
+                              product.id,
+                              "unit",
+                              e.target.value
+                            );
+                          }}
+                          onBlur={() => handleFocusOut()}
+                          onFocus={() => setFocusedProduct(product.id)}
+                        />
+                      </div>
 
-                    <div className="pltb-row-item">
-                      {" "}
-                      <input
-                        type="text"
-                        value={product.in_stock}
-                        onChange={(e) => {
-                          setIsChanged(true);
-                          handleValueChange(
-                            product.id,
-                            "in_stock",
-                            e.target.value
-                          );
-                        }}
-                        onBlur={() => handleFocusOut()}
-                        onFocus={() => setFocusedProduct(product.id)}
-                      />{" "}
-                    </div>
+                      <div className="pltb-row-item tab-remove">
+                        {" "}
+                        <input
+                          type="text"
+                          value={product.in_stock}
+                          onChange={(e) => {
+                            setIsChanged(true);
+                            handleValueChange(
+                              product.id,
+                              "in_stock",
+                              e.target.value
+                            );
+                          }}
+                          onBlur={() => handleFocusOut()}
+                          onFocus={() => setFocusedProduct(product.id)}
+                        />{" "}
+                      </div>
 
-                    <div className="pltb-row-item">
-                      {" "}
-                      <input
-                        type="text"
-                        value={product.description}
-                        onChange={(e) => {
-                          setIsChanged(true);
-                          handleValueChange(
-                            product.id,
-                            "description",
-                            e.target.value
-                          );
-                        }}
-                        onBlur={() => handleFocusOut()}
-                        onFocus={() => setFocusedProduct(product.id)}
-                      />{" "}
-                    </div>
-                    <div style={{marginLeft: "1rem", cursor: "pointer"}}>
-                      <PiDotsThreeBold />
+                      <div className="pltb-row-item tab-remove">
+                        {" "}
+                        <input
+                          type="text"
+                          value={product.description}
+                          onChange={(e) => {
+                            setIsChanged(true);
+                            handleValueChange(
+                              product.id,
+                              "description",
+                              e.target.value
+                            );
+                          }}
+                          onBlur={() => handleFocusOut()}
+                          onFocus={() => setFocusedProduct(product.id)}
+                        />{" "}
+                      </div>
+                      <div
+                        style={{ marginLeft: "1rem", cursor: "pointer" }}
+                        onClick={() =>
+                          setShowOptionsMenu((prev) => ({
+                            show: !prev.show,
+                            id: product.id,
+                          }))
+                        }
+                      >
+                        <PiDotsThreeBold />
+                        <div className="options-wrapper">
+                        {showOptionsMenu.show &&
+                          product.id === showOptionsMenu.id && (
+                            <div className="options-menu">
+                              <div>
+                                {" "}
+                                <IoClose />
+                                <span> Close </span>
+                              </div>
+                              <div>
+                                {" "}
+                                <MdEdit />
+                                <span> Edit Product </span>
+                              </div>
+                              <div>
+                                {" "}
+                                <MdDelete />
+                                <span> Delete Product </span>
+                              </div>
+                            </div>
+                          )}
+                      </div>
+                      </div>
+                      
                     </div>
                   </div>
                 );
