@@ -127,4 +127,6 @@ AUTH_USER_MODEL = "useraccount.User"
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://localhost:3001",
+    "http://54.237.202.126",
 ]

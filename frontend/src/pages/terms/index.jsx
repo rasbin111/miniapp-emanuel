@@ -19,7 +19,9 @@ const TermsPage = () => {
                 return response.data
         }
     })
-    if (!isLoading) {
+      if (isLoading || !termsItems) return null;
+
+    if (isLoading) {
 
         return (
             <div className='terms-container'>
