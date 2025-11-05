@@ -21,7 +21,7 @@ const TermsPage = () => {
     })
       if (isLoading || !termsItems) return null;
 
-    if (isLoading) {
+
 
         return (
             <div className='terms-container'>
@@ -41,7 +41,6 @@ const TermsPage = () => {
 
             </div>
         )
-    }
 }
 
 export default TermsPage
