@@ -1,7 +1,7 @@
 import axios, { AxiosError } from 'axios'
 
-const PUBLIC_BASE = "http://localhost:8000"
-const PUBLIC_BASE_TOKEN = "http://localhost:8000/token/refresh/"
+const PUBLIC_BASE = "http://localhost:8000/backend/"
+const PUBLIC_BASE_TOKEN = "http://localhost:8000/backend/token/refresh/"
 
 const api = axios.create({
     baseURL: PUBLIC_BASE,
