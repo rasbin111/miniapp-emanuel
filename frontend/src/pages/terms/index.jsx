@@ -1,5 +1,4 @@
 import HeaderWithBackground from '../../components/headerWithBackground'
-import { useNavigate } from 'react-router'
 import { useQuery } from '@tanstack/react-query'
 import { getContentData } from '../../api/main'
 
@@ -8,7 +7,6 @@ import { useContext } from 'react'
 import { LanguageContext } from '../../context/languageContext'
 
 const TermsPage = () => {
-    const navigate = useNavigate();
     const { language } = useContext(LanguageContext)
 
     const { data: termsItems, isLoading } = useQuery({
@@ -29,13 +27,13 @@ const TermsPage = () => {
                 <div className="terms-content">
                     <div className='terms-top-text'>
                         <h1> {termsItems.term_heading} </h1>
-                        <button onClick={() => navigate(-1)} className='terms-close-button'> {termsItems.term_close_button}</button>
+                        <button onClick={()=>{window.close('', '_self', '');history.back();}} className='terms-close-button'> {termsItems.term_close_button} </button>
                     </div>
                     <div className='terms-text-content'>
                         <div dangerouslySetInnerHTML={{ __html: termsItems.terms }} />
                     </div>
                     <div className='terms-bottom-text'>
-                        <button onClick={() => navigate(-1)} className='terms-close-button'> {termsItems.term_close_button} </button>
+                        <button onClick={()=>{window.close('', '_self', '');history.back();}} className='terms-close-button'> {termsItems.term_close_button} </button>
                     </div>
                 </div>
 

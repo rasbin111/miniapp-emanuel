@@ -17,14 +17,17 @@
     position: relative;
     text-align: center;
     background-color: white;
-    width: 80%;
-    padding: 3rem 2rem;
+    width: 750px;
+    margin: 0 auto;
+    padding: 40px;
+    transition: width;
     border-radius: 20px;
-    color: gray;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.5em;
 }
 
 .terms-top-text {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,13 +41,16 @@
 }
 
 .terms-close-button {
-    padding: 1rem 2rem;
-    background-color: rgb(15, 172, 15);
+    font-size: 1.123em;
+    background-color: rgb(8, 158, 30);
     color: white;
-    font-size: 1.2rem;
-    border-radius: 20px;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
     border: none;
     margin: 1rem 0;
+    width: 35vw;
+    min-width: max-content;
+    max-width: 270px;
     cursor: pointer;
 }
 
