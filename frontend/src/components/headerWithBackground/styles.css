@@ -152,9 +152,6 @@
 }
 
 @media screen and (max-width: 500px) {
-  .navigation-header {
-    width: 100%;
-  }
 
   .nav-list {
     width: 13rem;

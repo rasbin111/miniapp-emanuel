@@ -38,69 +38,71 @@ const LoginPage = () => {
     <div className="login-container">
       <HeaderWithBackground />
       <div className="login-form-box">
-        <form className="login-form" onSubmit={handleSubmit}>
-          <h2>Log in</h2>
-          <section className="login-section">
-            <div className="login-email">
-              <label htmlFor="" className="login-email-label">
-                Enter email address
-              </label>
-              <input
-                type="email"
-                id="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                onBlur={() => {
-                  if (email.length == 0) {
-                    setEmailEmtError(true);
-                  }
-                }}
-                placeholder="Email address"
-              />
-            </div>
-            {emailEmptError && (
-              <span className="email-error-span error-span">
-                Please enter a valid email address
-              </span>
-            )}
-            <div className="login-password">
-              <label htmlFor="" className="login-password-label">
-                Enter your password
-              </label>
-              <div className="password-input-div">
+        <div className="form-box">
+          <form className="login-form" onSubmit={handleSubmit}>
+            <h2>Log in</h2>
+            <section className="login-section">
+              <div className="login-email">
+                <label htmlFor="" className="login-email-label">
+                  Enter email address
+                </label>
                 <input
-                  type={showPassword ? "text" : "password"}
-                  id="password"
+                  type="email"
+                  id="email"
                   required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   onBlur={() => {
                     if (email.length == 0) {
-                      setPasswordEmptError(true);
+                      setEmailEmtError(true);
                     }
                   }}
-                  placeholder="Password"
+                  placeholder="Email address"
                 />
-                <BiShow onClick={() => setShowPassword((prev) => !prev)} />
               </div>
+              {emailEmptError && (
+                <span className="email-error-span error-span">
+                  Please enter a valid email address
+                </span>
+              )}
+              <div className="login-password">
+                <label htmlFor="" className="login-password-label">
+                  Enter your password
+                </label>
+                <div className="password-input-div">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    id="password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    onBlur={() => {
+                      if (email.length == 0) {
+                        setPasswordEmptError(true);
+                      }
+                    }}
+                    placeholder="Password"
+                  />
+                  <BiShow onClick={() => setShowPassword((prev) => !prev)} />
+                </div>
+              </div>
+              {passwordEmptError && (
+                <span className="password-error-span error-span">
+                  This field cannot be empty
+                </span>
+              )}
+            </section>
+            <div className="login-button-div">
+              <button className="login-button" type="submit">
+                Log in{" "}
+              </button>
             </div>
-            {passwordEmptError && (
-              <span className="password-error-span error-span">
-                This field cannot be empty
-              </span>
-            )}
-          </section>
-          <div className="login-button-div">
-            <button className="login-button" type="submit">
-              Log in{" "}
-            </button>
-          </div>
+          </form>
           <section className="other-links">
             <a href="#">Register</a>
             <a href="#">Forgotten password?</a>
           </section>
-        </form>
+        </div>
       </div>
       <footer className="footer-div">
         <div className="footer-text-section">
