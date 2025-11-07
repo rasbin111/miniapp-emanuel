@@ -27,6 +27,7 @@ const router = createBrowserRouter([
       { path: "/customers", Component: Customers },
     ]
   },
+  { path: "/terms", Component: TermsPage },
   { path: "*", Component: PageNotFound },
 ]);
 
