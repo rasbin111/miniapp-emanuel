@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-// const PUBLIC_BASE = `${import.meta.env.VITE_API_BASE_URL}`
-// const PUBLIC_BASE_TOKEN = `${import.meta.env.VITE_API_BASE_URL}/api/token/refresh/`
+const PUBLIC_BASE = `${import.meta.env.VITE_API_BASE_URL}`
+const PUBLIC_BASE_TOKEN = `${import.meta.env.VITE_API_BASE_URL}/api/token/refresh/`
 
-const PUBLIC_BASE = `http://localhost:8000`
-const PUBLIC_BASE_TOKEN = `http://localhost:8000/api/token/refresh/`
+// const PUBLIC_BASE = `http://localhost:8000`
+// const PUBLIC_BASE_TOKEN = `http://localhost:8000/api/token/refresh/`
 
 const api = axios.create({
     baseURL: PUBLIC_BASE,
