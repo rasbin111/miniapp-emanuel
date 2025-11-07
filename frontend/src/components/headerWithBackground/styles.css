@@ -5,6 +5,8 @@
   object-fit: cover;
   object-position: center center;
   z-index: -1;
+  height: 100vh;
+  height: 100vdh;
 }
 
 .navigation-container {
