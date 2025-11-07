@@ -1,12 +1,14 @@
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { IoMdAdd, IoMdPrint } from "react-icons/io";
+import { IoMdPrint } from "react-icons/io";
 import { PiDotsThreeBold } from "react-icons/pi";
 import { useQueryClient } from "@tanstack/react-query";
+import { FaPlusCircle } from "react-icons/fa";
 
-import { MdDelete, MdEdit, MdSettingsSuggest } from "react-icons/md";
+import { MdDelete, MdEdit } from "react-icons/md";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { getData, editData } from "../../api/main";
+import { RxSwitch } from "react-icons/rx";
 
 import "./styles.css";
 import { FaArrowRight } from "react-icons/fa6";
@@ -93,7 +95,7 @@ const PriceListPage = () => {
 
   const handleConfirmChange = (confirmationResponse) => {
     if (confirmationResponse === "no") {
-      setIsChanged(false)
+      setIsChanged(false);
       setEditableProducts((prev) => {
         return prev.map((p) => {
           if (p.id === selectedChange.idx) {
@@ -124,26 +126,26 @@ const PriceListPage = () => {
         <div className="price-list-header">
           <div className="price-list-header-left">
             <div className="search-bar">
-              <input type="text" placeholder="Search Article No" />
+              <input type="text" placeholder="Search Article No. ..." />
               <FaSearch />
             </div>
             <div className="search-bar">
-              <input type="text" placeholder="Search Product" />
+              <input type="text" placeholder="Search Product..." />
               <FaSearch />
             </div>
           </div>
           <div className="price-list-header-right">
             <div className="plh-right-item">
               <span> New Product </span>
-              <IoMdAdd />
+              <FaPlusCircle color="rgba(49, 182, 122, 1)" />
             </div>
             <div className="plh-right-item">
               <span> Price List </span>
-              <IoMdPrint />
+              <IoMdPrint color="rgba(92, 207, 215, 1)" />
             </div>
             <div className="plh-right-item">
               <span> Advanced Mode </span>
-              <MdSettingsSuggest />
+              <RxSwitch color="rgba(56, 191, 173, 1)" />
             </div>
           </div>
         </div>
@@ -167,7 +169,7 @@ const PriceListPage = () => {
                   <div>
                     <div className="pltb-row" key={product.id}>
                       {focusedProduct === product.id ? (
-                        <FaArrowRight style={{color: "rgb(128, 192, 229)"}}/>
+                        <FaArrowRight style={{ color: "rgb(128, 192, 229)" }} />
                       ) : (
                         <div style={{ width: "1rem" }}></div>
                       )}
@@ -302,29 +304,28 @@ const PriceListPage = () => {
                       >
                         <PiDotsThreeBold />
                         <div className="options-wrapper">
-                        {showOptionsMenu.show &&
-                          product.id === showOptionsMenu.id && (
-                            <div className="options-menu">
-                              <div>
-                                {" "}
-                                <IoClose />
-                                <span> Close </span>
+                          {showOptionsMenu.show &&
+                            product.id === showOptionsMenu.id && (
+                              <div className="options-menu">
+                                <div>
+                                  {" "}
+                                  <IoClose />
+                                  <span> Close </span>
+                                </div>
+                                <div>
+                                  {" "}
+                                  <MdEdit />
+                                  <span> Edit Product </span>
+                                </div>
+                                <div>
+                                  {" "}
+                                  <MdDelete />
+                                  <span> Delete Product </span>
+                                </div>
                               </div>
-                              <div>
-                                {" "}
-                                <MdEdit />
-                                <span> Edit Product </span>
-                              </div>
-                              <div>
-                                {" "}
-                                <MdDelete />
-                                <span> Delete Product </span>
-                              </div>
-                            </div>
-                          )}
+                            )}
+                        </div>
                       </div>
-                      </div>
-                      
                     </div>
                   </div>
                 );

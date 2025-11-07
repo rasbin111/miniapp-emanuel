@@ -9,23 +9,58 @@ import { FaUserCircle } from "react-icons/fa";
 
 import "./styles.css";
 import { NavLink, Outlet, useLocation } from "react-router";
+import { FiAlertTriangle } from "react-icons/fi";
+import { BiSolidOffer } from "react-icons/bi";
+import { MdOutlineInventory } from "react-icons/md";
+import { FaFileInvoice } from "react-icons/fa";
+import { TiExport } from "react-icons/ti";
 
 const navigationItems = [
-  { title: "Invoices", link: "/invoices", icon: <PiInvoice /> },
-  { title: "Customers", link: "/customers", icon: <FaUserCircle /> },
-  { title: "My Business", link: "/my-business", icon: <FcBusiness /> },
+  { title: "Invoices", link: "/invoices", icon: <PiInvoice color="skyblue"/> },
+  { title: "Customers", link: "/customers", icon: <FaUserCircle color="rgba(115, 178, 188, 1)"/> },
+  { title: "My Business", link: "/my-business", icon: <FcBusiness color="rgba(166, 218, 210, 1)"/> },
   {
     title: "Invoice Journal",
     link: "/invoice-journal",
-    icon: <PiInvoiceFill />,
+    icon: <PiInvoiceFill color="rgba(88, 128, 181, 1)"/>,
   },
-  { title: "Price List", link: "/price-list", icon: <GiPriceTag /> },
+  { title: "Price List", link: "/price-list", icon: <GiPriceTag color="rgba(110, 221, 226, 1)"/> },
   {
     title: "Multiple Invoicing",
     link: "/multiple-invoicing",
-    icon: <PiInvoiceBold />,
+    icon: <PiInvoiceBold color="rgba(42, 211, 217, 1)"/>,
   },
-  { title: "Log out", link: "/logout", icon: <BiLogOut /> },
+
+  {
+    title: "Unpaid Invoices",
+    link: "/unpaid-invoices",
+    icon: <FiAlertTriangle color="rgba(191, 92, 92, 1)"/>,
+  },
+    {
+    title: "Offer",
+    link: "/offer",
+    icon: <BiSolidOffer color="skyblue"/>,
+  },
+
+    {
+    title: "Inventory Control",
+    link: "/inventory-control",
+    icon: <MdOutlineInventory color="lightblue"/>,
+    inActive: true,
+  },
+
+    {
+    title: "Member Invoicing",
+    link: "/member-invoicing",
+    icon: <FaFileInvoice color="rgba(53, 205, 207, 1)"/>,
+    inActive: true,
+  },
+    {
+    title: "Import/Export",
+    link: "/import-export",
+    icon: <TiExport color="rgba(17, 153, 174, 1)"/>,
+  },
+  { title: "Log out", link: "/logout", icon: <BiLogOut color="red"/> },
 ];
 
 const HeaderWithSidebar = () => {
@@ -110,13 +145,9 @@ const HeaderWithSidebar = () => {
                 <NavLink
                   key={index}
                   to={item.link}
-                  className={
-                    location.pathname === item.link
-                      ? "nav-item active-nav-item"
-                      : "nav-item"
-                  }
+                  className={item.inActive? "nav-item link-not-working": "nav-item"}
                 >
-                  {location.pathname === item.link? <div> </div>: ""}
+                  <div className={location.pathname === item.link? "active-link": ""}> </div>
                   {item.icon}
                   <span className="title">{item.title}</span>
                 </NavLink>
