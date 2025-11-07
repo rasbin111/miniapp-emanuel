@@ -43,7 +43,7 @@ const HeaderWithBackground = () => {
                     : `right-section-nav`
                 }
               >
-                <a href="/home" className="navigation-item">
+                <a href="/" className="navigation-item">
                   {" "}
                   {menuItems.home}{" "}
                 </a>

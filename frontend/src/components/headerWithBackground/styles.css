@@ -77,6 +77,7 @@
   justify-content: center;
   cursor: pointer;
   color: white;
+    font-weight: 600;
   font-size: 1.125rem;
   position: relative;
 }
@@ -88,6 +89,7 @@
   padding: 0.25rem;
   border-radius: 0.5rem;
   gap: 1rem;
+  font-weight: 600;
   font-size: inherit;
   position: absolute;
   z-index: 10;
@@ -108,7 +110,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1290px) {
   .burger-menu {
     display: block;
     color: white;
@@ -123,11 +125,6 @@
   }
 
   .nav-list {
-    /* background-color: white;
-        display: block;
-        height: 325px;
-        z-index: 10;
-        position: absolute; */
     margin-top: 3rem;
     background-color: white;
     display: flex;
@@ -142,6 +139,7 @@
   .nav-list .navigation-item {
     color: black;
     padding: 1rem 3rem;
+    width: 100%;
   }
 
   .navigation-item:hover {
@@ -153,7 +151,7 @@
   }
 }
 
-@media screen and (max-width: 465px) {
+@media screen and (max-width: 500px) {
   .navigation-header {
     width: 100%;
   }
